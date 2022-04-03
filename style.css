@@ -59,15 +59,20 @@ nav ul a:active {
 .burger svg {
   fill: rgba(255, 255, 255, 0.842);
 }
-
+body,
+html {
+  overflow-x: hidden;
+}
 @media screen and (max-width: 760px) {
+  html,
   body {
     overflow-x: hidden;
+    position: relative;
   }
   .nav-links {
     position: absolute;
-    height: 92vh;
-    top: 8vh;
+    height: 93vh;
+    top: 7vh;
     /* 92 + 9 = 100vh */
     background-color: lightcoral;
     right: 0;
