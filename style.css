@@ -11,19 +11,102 @@ img {
   height: 100px;
 }
 
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+/* global end */
+
+/* nav */
 nav {
   background-color: lightcoral;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   padding: 20px;
-  margin: auto;
+  /* min-height: 8vh;  */
+  font-family: sans-serif;
+  /* margin: auto; */
+}
+nav .logo {
+  /* color: rgba(255, 255, 255, 0.822); */
+  color: white;
+  cursor: default;
+}
+nav ul {
+  display: flex;
+  gap: 2rem;
+}
+nav ul a {
+  color: rgba(255, 255, 255, 0.822);
+}
+nav ul a:hover {
+  text-decoration: underline;
+  color: white;
+}
+nav ul a:active {
+  color: white;
+}
+.burger svg {
+  width: 30px;
+  height: 30px;
+}
+.burger {
+  display: none;
+}
+.burger svg {
+  fill: rgba(255, 255, 255, 0.842);
 }
 
-.nav-links {
-  background-color: aqua;
-  display: flex;
-  gap: 20px;
+@media screen and (max-width: 760px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-links {
+    position: absolute;
+    height: 92vh;
+    top: 8vh;
+    /* 92 + 9 = 100vh */
+    background-color: lightcoral;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    width: 50%;
+    padding: 40px;
+    transform: translateX(100%);
+    transition: all 0.5s ease;
+  }
+  .nav-links li {
+    opacity: 0;
+    /* transition: all 0.2s ease-in; */
+  }
+  .burger {
+    display: block;
+    z-index: 1;
+    cursor: pointer;
+  }
+  nav {
+    justify-content: space-between;
+  }
 }
+.show-toggle {
+  transform: translateX(0);
+}
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(50px);
+  }
+}
+
+/* nav end  */
 
 /* about */
 
@@ -84,9 +167,8 @@ nav {
 }
 
 .grid {
-  width: 350px;
-  height: 200px;
-  border: 3px solid black;
+  width: 500px;
+  /* height: 9rem; */
   background-color: limegreen;
   display: flex;
   gap: 20px;
@@ -94,12 +176,12 @@ nav {
 }
 
 .grid img {
-  background-color: yellow;
+  /* background-color: yellow; */
   align-self: center;
 }
 
 .grid div {
-  background-color: blue;
+  /* background-color: blue; */
   align-self: center;
 }
 
@@ -109,4 +191,10 @@ footer {
   background-color: lightgreen;
   padding: 2rem;
   text-align: center;
+}
+/* container */
+
+.container {
+  width: 60%;
+  margin: auto;
 }
